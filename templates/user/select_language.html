@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Select Language</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <style>
+        .language-grid {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .language-card {
+            background: linear-gradient(to right, #4facfe, #00f2fe);
+            color: white;
+            border-radius: 12px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 18px;
+            padding: 30px 40px;
+            transition: 0.3s ease;
+            width: 200px;
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: none;
+        }
+
+        .language-card:hover {
+            transform: translateY(-4px);
+            cursor: pointer;
+        }
+
+        .language-card form {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+<div class="dashboard-container">
+    <div class="sidebar user-sidebar">
+        <div class="profile-box">
+            <h2>{{ session['username'] }}</h2>
+        </div>
+        <div class="sidebar-links">
+            <a href="/history">📚 Essay History</a>
+            <a href="/logout">🚪 Logout</a>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <h1>🌐 Select Language for Essay Topics</h1>
+        <div class="language-grid">
+            <form method="POST" action="/dashboard"><button name="language" value="English" class="language-card">🇬🇧 English</button></form>
+            <form method="POST" action="/dashboard"><button name="language" value="Hindi" class="language-card">🇮🇳 Hindi</button></form>
+            <form method="POST" action="/dashboard"><button name="language" value="Marathi" class="language-card">🇲🇭 Marathi</button></form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
